@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+
+# Local environment
+.env
+.env.*
+
+# ML/data artifacts
+dataset/fake_job_postings.csv
+backend/jobshield_model.pkl
+backend/vectorizer.pkl
+
+# Generated outputs
+outputs/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,18 @@
+{
+  "fraud_threshold": 0.3748,
+  "accuracy": 0.9897,
+  "roc_auc": 0.9896,
+  "average_precision": 0.9322,
+  "text_columns": [
+    "title",
+    "company_profile",
+    "description",
+    "requirements",
+    "benefits",
+    "employment_type",
+    "required_experience",
+    "required_education",
+    "industry",
+    "function"
+  ]
+}

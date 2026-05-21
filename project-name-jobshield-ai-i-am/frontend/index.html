@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobShield AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="brand">
+            <div class="brand-mark">JS</div>
+            <div>
+                <h1>JobShield AI</h1>
+                <p>AI-powered job scam detection</p>
+            </div>
+        </div>
+        <nav class="nav-tabs" aria-label="Primary navigation">
+            <button class="nav-link active" data-page="home">Home</button>
+            <button class="nav-link" data-page="analyzer">Analyzer</button>
+            <button class="nav-link" data-page="dashboard">Dashboard</button>
+            <button class="nav-link" data-page="history">History</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page active">
+            <div class="hero">
+                <div>
+                    <h2>Detect suspicious job posts before applicants get trapped.</h2>
+                    <p>
+                        Paste a job description and JobShield AI will score the risk using a trained
+                        NLP model plus readable red-flag explanations.
+                    </p>
+                    <button class="primary-btn" data-page-target="analyzer">Analyze a job</button>
+                </div>
+                <div class="hero-panel">
+                    <span>ML Stack</span>
+                    <strong>TF-IDF + Logistic Regression</strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="analyzer" class="page">
+            <div class="workspace">
+                <section class="input-panel">
+                    <div class="section-heading">
+                        <span class="eyebrow">Analyzer</span>
+                        <h2>Paste job description</h2>
+                    </div>
+                    <textarea id="jobText" placeholder="Paste the complete job description here..."></textarea>
+                    <div class="input-footer">
+                        <span id="charCounter">0 characters</span>
+                        <button id="analyzeBtn" class="primary-btn">
+                            <span class="btn-label">Analyze</span>
+                            <span class="spinner" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <p id="errorMessage" class="error-message" role="alert"></p>
+                </section>
+
+                <section id="resultCard" class="result-card hidden" aria-live="polite">
+                    <div class="result-topline">
+                        <span id="riskBadge" class="risk-badge">Risk</span>
+                        <span id="confidenceScore">Confidence: --</span>
+                    </div>
+                    <h2 id="verdictText">Awaiting analysis</h2>
+                    <div class="score-wrap">
+                        <div class="score-ring">
+                            <span id="fraudScore">0</span>
+                            <small>%</small>
+                        </div>
+                        <div>
+                            <p class="score-label">Fraud score</p>
+                            <p id="aiExplanation" class="explanation"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Detected red flags</h3>
+                        <ul id="redFlagsList" class="red-flags"></ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section id="dashboard" class="page">
+            <div class="dashboard-grid">
+                <article class="metric-card">
+                    <span>Total checks</span>
+                    <strong id="totalChecks">0</strong>
+                </article>
+                <article class="metric-card">
+                    <span>Fraudulent</span>
+                    <strong id="fraudCount">0</strong>
+                </article>
+                <article class="metric-card">
+                    <span>Average risk</span>
+                    <strong id="avgRisk">0%</strong>
+                </article>
+            </div>
+        </section>
+
+        <section id="history" class="page">
+            <div class="section-heading">
+                <span class="eyebrow">History</span>
+                <h2>Recent analyses</h2>
+            </div>
+            <div id="historyList" class="history-list"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
